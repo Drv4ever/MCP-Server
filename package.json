@@ -1,11 +1,14 @@
 {
   "name": "mcpserver",
   "version": "1.0.0",
+  "type": "module",
   "description": "creating a mcp server",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "node --watch --loader tsx src/index.ts",
+    "inspector": "npx @modelcontextprotocol/inspector node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/Drv4ever/MCP-Server/issues"
   },
-  "homepage": "https://github.com/Drv4ever/MCP-Server#readme"
+  "homepage": "https://github.com/Drv4ever/MCP-Server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "typescript": "^6.0.3"
+  }
 }

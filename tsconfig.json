@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // 1. File Layout - This tells tsc where to look and where to save
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // 2. Environment Settings
+    "module": "nodenext",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "types": ["node"], // <--- Fixed: This allows child_process and util to work
+
+    // 3. Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // 4. Stricter Typechecking Options
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // 5. Recommended Options
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"] // <--- Added: This tells TS to only worry about files in /src
+}
